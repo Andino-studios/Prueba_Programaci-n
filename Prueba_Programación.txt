@@ -1,0 +1,29 @@
+object main {
+  //Ejericio 1
+  def myMethod(datos: List[Double]): Double = {
+    val prom = datos.sum / datos.size
+    val sumCua = datos.map(x => math.pow(x - prom,2)).sum
+    math.sqrt(sumCua / datos.size)
+  }
+//Ejercicio 2
+    def main(args: Array[String]): Unit = {
+
+      val preciosBase = List(8.0, 15.0, 30.0)
+
+      val preciva = preciosBase.map(p => p * 1.12)
+      val precides = preciosBase.map(p => p * 0.80)
+      val preciEstacio = preciosBase.map(p => p + 5)
+
+      println("Base: " + preciosBase)
+      println("Con IVA: " + preciva)
+      println("Con descuento: " + precides)
+      println("Estacional: " + preciEstacio)
+    }
+
+//Ejercicio 3
+  def generadorIncrementador(incremento: Int): Int => Int = {
+    def incrementar(x: Int): Int = x + incremento
+    incrementar
+  }
+
+}
